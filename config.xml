@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.kbcrt.words" version="1.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>高考斩词酱</name>
+    <description>以互动的方式快速背完3500考纲</description>
+    <author email="microkbcrt2@outlook.com">
+        kbcrt
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+		<allow-intent href="market:*" />
+		<!-- 
+		  ======== 安卓启动画面通用兼容性配置 ======== 
+		-->
+		<!-- 1. 启用 AndroidX，这是所有现代安卓库的基础 -->
+		<preference name="AndroidXEnabled" value="true" />
+	 
+		<!-- 2. 指定启动画面的核心：图标 -->
+		<!-- 我们使用 cordova-res 生成的标准图标之一 -->
+		<preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/icon/mipmap-xxxhdpi/ic_launcher.png" />
+		
+		<!-- 3. 指定启动画面的背景颜色 -->
+		<preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
+	 
+		<!-- 4. [可选] 控制启动画面的显示时长 (毫秒) -->
+		<!-- 安卓12+会尽量遵循这个时间 -->
+		<preference name="AndroidWindowSplashScreenAnimationDuration" value="1000" />
+		
+		<!-- 5. [可选] 旧版本上的淡出效果时长 (毫秒) -->
+		<!-- 让旧设备上的过渡更平滑 -->
+		<preference name="FadeSplashScreenDuration" value="500" />
+		<preference name="StatusBarOverlaysWebView" value="false" />
+		<preference name="StatusBarBackgroundColor" value="#fef7ff" /> <!-- 你想要的浅色背景 -->
+		<preference name="StatusBarStyle" value="default" /> <!-- 设置状态栏图标颜色为深色 -->
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<queries>
+				<intent>
+					<action android:name="android.intent.action.TTS_SERVICE" />
+				</intent>
+			</queries>
+		</config-file>
+    </platform>
+</widget>

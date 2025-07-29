@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Example</title>
+    <script src="cordova.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Text-to-Speech Example</h1>
+    <button id="speakButton">Speak</button>
+    <p id="status"></p>
+
+    <script>
+        // 等待设备准备就绪
+        document.addEventListener('deviceready', function () {
+            console.log("Device is ready!");
+
+            // 按钮点击事件：进行文本转语音
+            $('#speakButton').on('click', function () {
+                var text = "Hello, welcome to the Cordova Text-to-Speech plugin demo!";
+                var options = {
+                    text: text,
+                    locale: 'en-US', // 设置语言
+                    rate: 1.0,       // 设置语速
+                    pitch: 1.0       // 设置音调
+                };
+
+                // 调用 TTS 插件进行语音合成
+                TTS.speak(options, function () {
+                    $('#status').text("Speech finished successfully!");
+                    console.log("Speech finished successfully");
+                }, function (reason) {
+                    $('#status').text("Error: " + reason);
+                    console.error("Error:", reason);
+                });
+            });
+        }, false);
+    </script>
+
+</body>
+</html>

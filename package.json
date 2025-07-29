@@ -1,0 +1,50 @@
+{
+  "name": "com.kbcrt.words",
+  "displayName": "高考斩词酱",
+  "version": "1.0.0",
+  "description": "一个为高考设计的单词卡片APP。",
+  "main": "index.js",
+  "scripts": {
+    "android": "cordova run android",
+    "build": "cordova build android",
+    "build-release": "cordova build android --release"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "kbcrt",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^14.0.1",
+    "cordova-open-native-settings": "^1.5.5",
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-app-version": "^0.1.14",
+    "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-file": "^8.1.3",
+    "cordova-plugin-file-opener2": "^4.0.0",
+    "cordova-plugin-inappbrowser": "^6.0.0",
+    "cordova-plugin-statusbar": "^4.0.0",
+    "cordova-plugin-tts": "^0.2.3",
+    "cordova-plugin-x-socialsharing": "^6.0.4"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-tts": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-open-native-settings": {},
+      "cordova-plugin-file": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
+      "cordova-plugin-file-opener2": {},
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-app-version": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-dialogs": {}
+    }
+  },
+  "dependencies": {}
+}

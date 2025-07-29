@@ -1,0 +1,10 @@
+{
+  "android": {
+    "release": {
+      "architectures": ["armeabi-v7a"]
+    },
+    "debug": {
+      "architectures": ["armeabi-v7a"]
+    }
+  }
+}
