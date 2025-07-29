@@ -1,0 +1,52 @@
+name: Build Cordova Android (Debug)
+
+# 定义触发工作流的事件
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # 指定运行此作业的虚拟机环境
+    runs-on: ubuntu-latest
+
+    steps:
+    # 第一步：检出你的代码仓库
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # 第二步：设置 Node.js 环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # 您可以根据项目需要更改 Node.js 版本
+
+    # 第三步：设置 Java 开发环境 (JDK)
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11' # Cordova 通常需要 Java 11
+
+    # 第四步：安装 Cordova CLI
+    - name: Install Cordova
+      run: npm install -g cordova
+
+    # 第五步：安装项目依赖 (例如插件等)
+    - name: Install Dependencies
+      run: npm install
+
+    # 第六步：添加 Android 平台
+    - name: Add Android Platform
+      run: cordova platform add android@latest # 使用最新的 Android 平台
+
+    # 第七步：构建 Debug 版本的 APK
+    # "cordova build android" 命令默认就会生成 debug 版本的 APK
+    - name: Build Debug APK
+      run: cordova build android
+
+    # 第八步：上传构建产物 (APK 文件)
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: debug-apk # 上传后的文件包名称
+        path: platforms/android/app/build/outputs/apk/debug/app-debug.apk # debug APK 的默认路径
