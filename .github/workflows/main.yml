@@ -33,7 +33,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
-        java-version: '11' # Cordova 通常使用 Java 11
+        java-version: '117' # Cordova 通常使用 Java 11
 
     # 第4步：安装 Cordova 命令行工具
     - name: Install Cordova
